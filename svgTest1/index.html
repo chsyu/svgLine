@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>SVG Test</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
+
+   <style>
+      div, h1, img {
+         margin: 0;
+         padding: 0;
+      }
+      .row {
+         float: left;
+         width: 30%;
+      }
+      .clear:after {
+         display: block;
+         clear: both;
+         content: "";
+      }
+      .btn:hover {
+         cursor: pointer;
+      }
+   </style>
+   <script>
+   $(function(){
+      $(".btn").click(function(){
+         $("#manu").toggleClass("start");
+      });
+      var manusvg = new Vivus('manu', {
+            file: 'doodle_manu.svg',
+         })
+   });
+   </script>
+</head>
+<body>
+   <div class="clear">
+         <div class="row">
+            <h1>Static SVG Animation</h1>
+            <img src="doodle.svg" alt="auto svg">
+         </div>
+         <div class="row">
+            <h1>Auto SVG Animation</h1>
+            <img src="doodle_auto.svg" alt="static svg">
+         </div>
+         <dir class="row">
+            <h1 class="btn">Manu SVG Animation</h1>
+            <svg width=500 height=1000 id="manu"></svg>
+         </dir>
+   </div>
+</body>
+</html>
